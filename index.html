@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darkness Store | Технологии</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
+        :root {
+            --bg-color: #0a0a0f;
+            --text-color: #ffffff;
+            --primary: #7b2cbf;
+            --secondary: #c77dff;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); overflow-x: hidden; }
+
+        .glow-bg { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(123,44,191,0.3) 0%, rgba(10,10,15,0) 70%); top: -100px; left: -100px; z-index: -1; filter: blur(60px); }
+
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: rgba(10, 10, 15, 0.7); backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .logo { font-size: 24px; font-weight: 800; background: linear-gradient(90deg, var(--secondary), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 1px; }
+        .nav-links a { color: #ccc; text-decoration: none; margin-left: 30px; font-size: 15px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--secondary); }
+
+        .hero { text-align: center; padding: 80px 20px; }
+        .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 18px; color: #aaa; max-width: 600px; margin: 0 auto 40px; font-weight: 300; }
+
+        .catalog { padding: 20px 20px 80px; }
+        .catalog h2 { text-align: center; font-size: 36px; margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+
+        .card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 20px; text-align: center; transition: 0.4s; backdrop-filter: blur(10px); }
+        .card:hover { transform: translateY(-10px); border-color: var(--secondary); box-shadow: 0 20px 40px rgba(199, 125, 255, 0.1); }
+        .card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 20px; transition: 0.4s; }
+        .card:hover img { transform: scale(1.05); }
+        .card h3 { font-size: 20px; margin-bottom: 10px; }
+        .price { font-size: 24px; font-weight: 800; color: var(--secondary); margin-bottom: 20px; }
+
+        .buy-btn { width: 100%; padding: 15px; background: rgba(255,255,255,0.1); border: none; border-radius: 12px; color: white; font-weight: 600; cursor: pointer; transition: 0.3s; text-decoration: none; display: block; }
+        .buy-btn:hover { background: var(--primary); }
+
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        footer p { color: #aaa; margin-bottom: 10px; }
+        .phone { font-size: 32px; font-weight: 800; color: white; text-decoration: none; display: inline-block; margin-top: 10px; transition: 0.3s; }
+        .phone:hover { color: var(--secondary); }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 38px; } nav { padding: 15px 20px; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <div class="glow-bg"></div>
+
+    <nav>
+        <div class="logo">DARKNESS STORE</div>
+        <div class="nav-links">
+            <a href="#">Главная</a>
+            <a href="#catalog">Каталог</a>
+            <a href="#contacts">Контакты</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Технологии <span>без границ</span><br>в Darkness Store.</h1>
+        <p>Оригинальные смартфоны и консоли с гарантией. Доставка по городу за 2 часа. Лучшие цены.</p>
+        <a href="#catalog" class="btn" style="padding: 15px 30px; background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: 600;">Смотреть каталог</a>
+    </section>
+
+    <section class="catalog" id="catalog">
+        <h2>Хиты продаж</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-1.jpg" alt="iPhone 15 Pro">
+                <h3>iPhone 15 Pro Max</h3>
+                <div class="price">120 000 ₽</div>
+                <a href="checkout.html" class="buy-btn">Купить</a>
+            </div>
+
+            <div class="card">
+                <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-ultra-1.jpg" alt="Samsung S24 Ultra">
+                <h3>Samsung Galaxy S24 Ultra</h3>
+                <div class="price">110 000 ₽</div>
+                <a href="checkout.html" class="buy-btn">Купить</a>
+            </div>
+
+            <div class="card">
+                <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-ultra-1.jpg" alt="Xiaomi 14 Ultra">
+                <h3>Xiaomi 14 Ultra</h3>
+                <div class="price">85 000 ₽</div>
+                <a href="checkout.html" class="buy-btn">Купить</a>
+            </div>
+
+            <!-- Добавил приставку -->
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PlayStation_5_and_PlayStation_5_Digital_Edition.png/800px-PlayStation_5_and_PlayStation_5_Digital_Edition.png" alt="PlayStation 5">
+                <h3>PlayStation 5 Slim</h3>
+                <div class="price">65 000 ₽</div>
+                <a href="checkout.html" class="buy-btn">Купить</a>
+            </div>
+
+            <!-- Добавил приставку -->
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Xbox_logo_2012.svg/800px-Xbox_logo_2012.svg.png" style="height: 120px; margin-top: 40px; margin-bottom: 60px;" alt="Xbox Series X">
+                <h3>Xbox Series X</h3>
+                <div class="price">55 000 ₽</div>
+                <a href="checkout.html" class="buy-btn">Купить</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contacts">
+        <p>Остались вопросы? Звоните нам!</p>
+        <!-- Твой номер -->
+        <a href="tel:+79188836511" class="phone">+7 (918) 883-65-11</a>
+        <p style="margin-top: 20px; font-size: 14px; color: #666;">© 2026 Darkness Store. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>
